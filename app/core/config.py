@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     qdrant_url: str | None = None
     qdrant_api_key: str | None = None
     qdrant_collection: str = 'documents'
+    qdrant_timeout: float = 10.0
 
     embedding_model: str = 'sentence-transformers/all-MiniLM-L6-v2'
 
@@ -27,6 +28,7 @@ class Settings(BaseSettings):
     rag_enabled: bool = True
     rag_mode: str = 'auto'
     top_k: int = 5
+
     max_context_chars: int = 4000
     min_score: float = 0.25
     min_score_strict: float = 0.35
