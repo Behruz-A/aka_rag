@@ -12,16 +12,16 @@ class Settings(BaseSettings):
     app_name: str = 'aka_rag'
     log_level: str = 'INFO'
 
-    qdrant_url: str | None = None
-    qdrant_api_key: str | None = None
-    qdrant_collection: str = 'documents'
+    qdrant_url: str
+    qdrant_api_key: str
+    qdrant_collection: str
     qdrant_timeout: float = 10.0
 
-    embedding_model: str = 'sentence-transformers/all-MiniLM-L6-v2'
+    embedding_model: str
 
-    llm_model: str = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
+    llm_model: str
     llm_adapter_path: str | None = None
-    llm_device: str = 'cpu'
+    llm_device: str
     llm_max_new_tokens: int = 256
     llm_temperature: float = 0.2
 
