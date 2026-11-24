@@ -15,14 +15,15 @@ class Settings(BaseSettings):
     qdrant_url: str
     qdrant_api_key: str
     qdrant_collection: str
-    qdrant_timeout: float = 10.0
+    qdrant_timeout: float = 60.0
+    qdrant_batch_size: int = 64
 
     embedding_model: str
 
     llm_model: str
     llm_adapter_path: str | None = None
-    llm_device: str
-    llm_max_new_tokens: int = 256
+    llm_device: str = 'cpu'
+    llm_max_new_tokens: int
     llm_temperature: float = 0.2
 
     rag_enabled: bool = True
@@ -31,11 +32,10 @@ class Settings(BaseSettings):
 
     max_context_chars: int = 4000
     min_score: float = 0.25
-    min_score_strict: float = 0.35
+    max_score_strict: float = 0.35
     max_sources: int = 2
     chunk_size_chars: int = 1200
     chunk_overlap_chars: int = 200
-    qdrant_timeout: float = 10.0
 
 
 settings = Settings()
